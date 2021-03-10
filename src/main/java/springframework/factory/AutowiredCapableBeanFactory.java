@@ -30,16 +30,53 @@ public class AutowiredCapableBeanFactory extends AbstractBeanFactory {
      * @param beanDefinition bean的定义
      * @throws Exception 反射异常
      */
+//    void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws Exception {
+//        for(PropertyValue propertyValue : beanDefinition.getPropertyValues().getPropertyValues()) {
+//            Field field = bean.getClass().getDeclaredField(propertyValue.getName());
+//            Object value = propertyValue.getValue();
+//            if(value instanceof BeanReference) {
+//                BeanReference beanReference = (BeanReference) propertyValue.getValue();
+//                BeanDefinition refDefinition = beanDefinitionMap.get(beanReference.getName());
+//                if(refDefinition.getBean() == null) {
+//                    value = doCreateBean(refDefinition);
+//                }
+//            }
+//            field.setAccessible(true);
+//            field.set(bean, value);
+//        }
+//    }
+
     void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws Exception {
         for(PropertyValue propertyValue : beanDefinition.getPropertyValues().getPropertyValues()) {
             Field field = bean.getClass().getDeclaredField(propertyValue.getName());
             Object value = propertyValue.getValue();
             if(value instanceof BeanReference) {
                 BeanReference beanReference = (BeanReference) propertyValue.getValue();
+                // 优先按照自定义名称匹配
                 BeanDefinition refDefinition = beanDefinitionMap.get(beanReference.getName());
-                if(refDefinition.getBean() == null) {
-                    value = doCreateBean(refDefinition);
+                if(refDefinition != null) {
+                    if(!refDefinition.isSingleton() || refDefinition.getBean() == null) {
+                        value = doCreateBean(refDefinition);
+                    } else {
+                        value = refDefinition.getBean();
+                    }
+                } else {
+                    // 按照类型匹配，返回第一个匹配的
+                    Class clazz = Class.forName(beanReference.getName());
+                    for(BeanDefinition definition : beanDefinitionMap.values()) {
+                        if(clazz.isAssignableFrom(definition.getBeanClass())) {
+                            if(!definition.isSingleton() || definition.getBean() == null) {
+                                value = doCreateBean(definition);
+                            } else {
+                                value = definition.getBean();
+                            }
+                        }
+                    }
                 }
+
+            }
+            if(value == null) {
+                throw new RuntimeException("无法注入");
             }
             field.setAccessible(true);
             field.set(bean, value);
