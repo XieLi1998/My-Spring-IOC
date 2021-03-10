@@ -7,11 +7,11 @@ package springframework.entity;
  */
 public class BeanDefinition {
 
-    private Object bean;
+    private Object bean;    // 实例化后的对象
     private Class beanClass;
     private String beanClassName;
-    private Boolean singleton;
-    private PropertyValues propertyValues;
+    private Boolean singleton;  // 是否是单例模式
+    private PropertyValues propertyValues;  // Bean的属性
 
     public Object getBean() {
         return bean;

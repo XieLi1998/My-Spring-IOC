@@ -19,7 +19,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         if (!beanDefinition.isSingleton() || beanDefinition.getBean() == null) {
             return doCreateBean(beanDefinition);
         } else {
-            return doCreateBean(beanDefinition);
+            return beanDefinition.getBean();
         }
     }
 

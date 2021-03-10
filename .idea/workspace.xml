@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6baa16ad-8898-4aef-8b05-9727ef320403" name="Default Changelist" comment="" />
+    <list default="true" id="6baa16ad-8898-4aef-8b05-9727ef320403" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springframework/entity/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springframework/entity/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springframework/factory/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springframework/factory/AbstractBeanFactory.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +19,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -23,6 +30,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1pWmOMAzU3Up23hRwG4VxJfAsVU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -76,6 +84,9 @@
       <workItem from="1615307188990" duration="1929000" />
       <workItem from="1615310772940" duration="781000" />
       <workItem from="1615359990466" duration="879000" />
+      <workItem from="1615390672198" duration="174000" />
+      <workItem from="1615394412666" duration="661000" />
+      <workItem from="1615398733685" duration="1686000" />
     </task>
     <servers />
   </component>
@@ -91,22 +102,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="972" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1615360131370" />
-    <state width="1153" height="146" key="GridCell.Tab.0.bottom" timestamp="1615360875169">
+    <state width="1067" height="161" key="GridCell.Tab.0.bottom" timestamp="1615400640205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1153" height="146" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615360875169" />
-    <state width="1153" height="146" key="GridCell.Tab.0.center" timestamp="1615360875169">
+    <state width="1067" height="161" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1615400640205" />
+    <state width="1067" height="161" key="GridCell.Tab.0.center" timestamp="1615400640205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1153" height="146" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1615360875169" />
-    <state width="1153" height="146" key="GridCell.Tab.0.left" timestamp="1615360875169">
+    <state width="1067" height="161" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1615400640205" />
+    <state width="1067" height="161" key="GridCell.Tab.0.left" timestamp="1615400640204">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1153" height="146" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1615360875169" />
-    <state width="1153" height="146" key="GridCell.Tab.0.right" timestamp="1615360875169">
+    <state width="1067" height="161" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1615400640204" />
+    <state width="1067" height="161" key="GridCell.Tab.0.right" timestamp="1615400640205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1153" height="146" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1615360875169" />
+    <state width="1067" height="161" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1615400640205" />
     <state x="394" y="113" key="Maven.ArtifactSearchDialog" timestamp="1615311300584">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
