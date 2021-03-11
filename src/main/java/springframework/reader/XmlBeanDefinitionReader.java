@@ -33,7 +33,6 @@ import java.util.jar.JarFile;
  */
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
-
     public XmlBeanDefinitionReader(ResourceLoader resourceLoader) {
         super(resourceLoader);
     }
@@ -61,7 +60,6 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
     protected void parseBeanDefinitions(Element root) {
         NodeList nodeList = root.getChildNodes();
-
         // 确定是否注解配置
         String basePackage = null;
         for(int i = 0; i < nodeList.getLength(); i ++) {
@@ -77,11 +75,15 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             parseAnnotation(basePackage);
             return;
         }
-
         for(int i = 0; i < nodeList.getLength(); i ++) {
             Node node = nodeList.item(i);
             if(node instanceof Element) {
-                processBeanDefinition((Element) node);
+                Element ele = (Element) node;
+                if(ele.getTagName().equals("bean")) {
+                    processBeanDefinition(ele);
+                } else if(ele.getTagName().equals("aop-config")){
+                    processProxyDefinition(ele);
+                }
             }
         }
     }
@@ -112,7 +114,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
         }
     }
 
-    protected void processAnnotationProperty(Class<?> clazz, BeanDefinition beanDefinition) {
+    public static void processAnnotationProperty(Class<?> clazz, BeanDefinition beanDefinition) {
 
         Field[] fields = clazz.getDeclaredFields();
         for(Field field : fields) {
@@ -306,4 +308,9 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             }
         }
     }
+
+    protected void processProxyDefinition(Element ele) {
+
+    }
+
 }

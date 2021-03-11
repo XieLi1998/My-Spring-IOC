@@ -7,11 +7,11 @@ package springframework.entity;
  */
 public class BeanDefinition {
 
-    private Object bean;    // 实例化后的对象
+    private Object bean;
     private Class beanClass;
     private String beanClassName;
-    private Boolean singleton;  // 是否是单例模式
-    private PropertyValues propertyValues;  // Bean的属性
+    private Boolean singleton;
+    private PropertyValues propertyValues;
 
     public Object getBean() {
         return bean;
@@ -42,16 +42,8 @@ public class BeanDefinition {
         }
     }
 
-    public Boolean isSingleton() {
-        return singleton;
-    }
-
-    public void setSingleton(Boolean singleton) {
-        this.singleton = singleton;
-    }
-
     public PropertyValues getPropertyValues() {
-        if (propertyValues == null) {
+        if(propertyValues == null) {
             propertyValues = new PropertyValues();
         }
         return propertyValues;
@@ -59,5 +51,13 @@ public class BeanDefinition {
 
     public void setPropertyValues(PropertyValues propertyValues) {
         this.propertyValues = propertyValues;
+    }
+
+    public Boolean isSingleton() {
+        return singleton;
+    }
+
+    public void setSingleton(Boolean singleton) {
+        this.singleton = singleton;
     }
 }

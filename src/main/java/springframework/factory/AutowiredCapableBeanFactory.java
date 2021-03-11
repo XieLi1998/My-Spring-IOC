@@ -30,22 +30,6 @@ public class AutowiredCapableBeanFactory extends AbstractBeanFactory {
      * @param beanDefinition bean的定义
      * @throws Exception 反射异常
      */
-//    void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws Exception {
-//        for(PropertyValue propertyValue : beanDefinition.getPropertyValues().getPropertyValues()) {
-//            Field field = bean.getClass().getDeclaredField(propertyValue.getName());
-//            Object value = propertyValue.getValue();
-//            if(value instanceof BeanReference) {
-//                BeanReference beanReference = (BeanReference) propertyValue.getValue();
-//                BeanDefinition refDefinition = beanDefinitionMap.get(beanReference.getName());
-//                if(refDefinition.getBean() == null) {
-//                    value = doCreateBean(refDefinition);
-//                }
-//            }
-//            field.setAccessible(true);
-//            field.set(bean, value);
-//        }
-//    }
-
     void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws Exception {
         for(PropertyValue propertyValue : beanDefinition.getPropertyValues().getPropertyValues()) {
             Field field = bean.getClass().getDeclaredField(propertyValue.getName());
@@ -82,5 +66,6 @@ public class AutowiredCapableBeanFactory extends AbstractBeanFactory {
             field.set(bean, value);
         }
     }
+
 
 }

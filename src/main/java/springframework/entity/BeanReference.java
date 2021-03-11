@@ -29,4 +29,5 @@ public class BeanReference {
     public void setBean(Object bean) {
         this.bean = bean;
     }
+
 }
